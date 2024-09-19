@@ -124,9 +124,13 @@ tasks.withType(KotlinCompilationTask::class).configureEach {
             allWarningsAsErrors = true
         }
         if (overriddenLanguageVersion != null) {
-            languageVersion = KotlinVersion.fromVersion(overriddenLanguageVersion!!)
-            println("Using LanguageVersion = $overriddenLanguageVersion")
-            freeCompilerArgs.add("-Xsuppress-version-warnings")
+            kotlin {
+                compilerOptions {
+                    languageVersion = KotlinVersion.fromVersion(overriddenLanguageVersion!!)
+                    println("Using LanguageVersion = $overriddenLanguageVersion")
+                    freeCompilerArgs.add("-Xsuppress-version-warnings")
+                }
+            }
         }
         freeCompilerArgs.add("-Xexpect-actual-classes")
     }
