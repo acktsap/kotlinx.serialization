@@ -504,7 +504,7 @@ fun main() {
 
 > You can get the full code [here](../guide/example/example-classes-11.kt).
 
-This example does not encode `null` in JSON because [Defaults are not encoded](#defaults-are-not-encoded).
+This example does not encode `null` in JSON because [Defaults are not encoded by default](#defaults-are-not-encoded-by-default)
 
 ```text
 {"name":"kotlinx.serialization"}
